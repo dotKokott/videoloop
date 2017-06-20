@@ -69,14 +69,11 @@ $(document).keydown(function(e) {
   	}
 
   	recording = true;
-  	console.log(stream);
     var key = e.keyCode - 97;
     console.log("Recording " + key);
     currentVideo = key;
     successCallback(stream);
   }
-
-
 });
 
 $(document).keyup(function(e) {
@@ -85,17 +82,16 @@ $(document).keyup(function(e) {
   		videos[i].volume = 1;
   	}
   	recording = false;
-  	console.log('stop');
     stopVideo();
   }
 
-  if(e.keyCode == 32) {
-  	for(var i = 0; i < 8; i++) {
-  		videos[i].pause();
-  		$(videos[i]).fadeOut();
-  	}
-
-  	$(videos[8]).width('100%');
-  	$(videos[8]).height('100%');
-  }
+  // if(e.keyCode == 32) {
+  // 	for(var i = 0; i < 8; i++) {
+  // 		videos[i].pause();
+  // 		$(videos[i]).fadeOut();
+  // 	}
+  //
+  // 	$(videos[8]).width('100%');
+  // 	$(videos[8]).height('100%');
+  // }
 });
